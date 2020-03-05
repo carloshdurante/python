@@ -5,18 +5,17 @@
 # Execeptions x Funções
 
 
-def InserirAluno(alunos, ra, nome):
+def inseriraluno(alunos, ra, nome):
     try:
         x = str(ra)
         if len(x) != 7:
+            raise TypeError
+        if ra in alunos:
             raise TypeError
     except ValueError:
         print("Erro: Digite apenas números inteiros")
     except TypeError:
         print("Permetido apenas 7 digitos")
-    try:
-        if ra in alunos:
-            raise TypeError
     except TypeError:
         print("Aluno já inserido")
     else:
@@ -24,7 +23,7 @@ def InserirAluno(alunos, ra, nome):
     return
 
 
-def BuscarAluno(alunos, ra, nome):
+def buscaraluno(alunos, ra, nome):
     try:
         if ra not in alunos:
             raise KeyError
@@ -39,9 +38,9 @@ alunos = {1234567: 'Carlos'}
 nome = input("Digite o nome do aluno:")
 ra = int(input("Digite o R.A do aluno:"))
 
-InserirAluno(alunos, ra, nome)
+inseriraluno(alunos, ra, nome)
 
 nome = input("Digite o nome do aluno:")
 ra = int(input("Digite o R.A do aluno:"))
 
-BuscarAluno(alunos, ra, nome)
+buscaraluno(alunos, ra, nome)
