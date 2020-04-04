@@ -21,12 +21,12 @@ class Pessoa:
         self.dependentes = dependentes
 
     def calcular_salario(self):
-        print(emprego01.salario + (emprego01.salario *
-              (pessoa01.dependentes * emprego01.bonus)))
+        print(self.emprego.salario + (self.emprego.salario *
+              (self.dependentes * self.emprego.bonus)))
 
 
 emprego01 = Emprego('Programador', 1000, 0.1)
 pessoa01 = Pessoa('Carlos', '11963409937', 'carlos.durante@outlook.com',
-                  emprego01, 3)
+                  emprego01, 1)
 
 pessoa01.calcular_salario()
