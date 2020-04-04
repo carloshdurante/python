@@ -14,18 +14,18 @@ class Exame:
 
     def imprimir_exame(self):
         print('====DADOS DO MÉDICO===')
-        print('Nome:', medico.nome)
-        print('CRM:', medico.crm)
-        print('Especialização:', medico.especializcao)
+        print('Nome:', self.medico.nome)
+        print('CRM:', self.medico.crm)
+        print('Especialização:', self.medico.especializcao)
         print('====DADOS DO PACIENTE===')
-        print('Nome:', paciente.nome)
-        print('CPF:', paciente.cpf)
-        print('Idade:', paciente.idade)
+        print('Nome:', self.paciente.nome)
+        print('CPF:', self.paciente.cpf)
+        print('Idade:', self.paciente.idade)
         print('====DADOS DO EXAME===')
-        print('Médico solicitante:', exame01.medico.nome)
-        print('Nome do paciente:', exame01.paciente.nome)
-        print('Tipo de teste realiazo:', exame01.descricao)
-        print('Resultado:', exame01.resultado)
+        print('Médico solicitante:', self.medico.nome)
+        print('Nome do paciente:', self.paciente.nome)
+        print('Tipo de teste realiazo:', self.descricao)
+        print('Resultado:', self.resultado)
 
 
 class Paciente:
@@ -42,9 +42,13 @@ class Medico:
         self.especializcao = especializacao
 
 
-paciente = Paciente('Marcelo Silva', '033444555-22', 26)
-medico = Medico('Ana Beatriz', 333431, 'Clínico Geral')
-exame01 = Exame(medico, paciente, 'COVID-19', 'Negativo')
+paciente01 = Paciente('Marcelo Silva', '033444555-22', 26)
+paciente02 = Paciente('Carlos Durante', '426972888-48', 26)
+medico01 = Medico('Ana Beatriz', 333431, 'Clínico Geral')
+medico02 = Medico('João Silva', 367439, 'Clínico Geral')
+exame01 = Exame(medico01, paciente01, 'COVID-19', 'Negativo')
 exame01.imprimir_exame()
+exame02 = Exame(medico02, paciente02, 'COVID-19', 'Negativo')
+exame02.imprimir_exame()
 # Deve exibir relatório com todos os dados do exame
 # (inclusive os dados do médico e paciente)
