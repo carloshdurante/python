@@ -1,3 +1,10 @@
+# Carlos Henrique Durante da Silva
+# (11)96340-9937
+# carlos.durante@outlook.com
+# https://linkedin.com/in/carloshdurante
+# Programação Orientada a Objetos
+
+
 class Aluno:
     def __init__(self, ra, nome):
         self.ra = ra

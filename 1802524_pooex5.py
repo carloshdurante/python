@@ -1,3 +1,10 @@
+# Carlos Henrique Durante da Silva
+# (11)96340-9937
+# carlos.durante@outlook.com
+# https://linkedin.com/in/carloshdurante
+# Programação Orientada a Objetos
+
+
 class Triangulo:
     def __init__(self, lado_a, lado_b, lado_c):
         self.lado_a = lado_a
