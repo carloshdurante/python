@@ -6,27 +6,35 @@
 
 
 class Emprego:
-    def __init__(self, cargo, salario, bonus):
+    def __init__(self, cargo, area, salario, bonus):
         self.cargo = cargo
+        self.area = area
         self.salario = salario
         self.bonus = bonus
 
 
 class Pessoa:
-    def __init__(self, nome, fone, email, emprego, dependentes):
+    def __init__(self, nome, fone, email, emprego):
         self.nome = nome
         self.fone = fone
         self.email = email
         self.emprego = emprego
-        self.dependentes = dependentes
+        self.dependentes = []
 
     def calcular_salario(self):
-        print(self.emprego.salario + (self.emprego.salario *
-              (self.dependentes * self.emprego.bonus)))
+        salario = self.emprego.salario + (self.emprego.salario *
+                                          (len(self.dependentes)
+                                           * self.emprego.bonus))/100
+        return salario
 
 
-emprego01 = Emprego('Programador', 1000, 0.1)
-pessoa01 = Pessoa('Carlos', '11963409937', 'carlos.durante@outlook.com',
-                  emprego01, 1)
+emprego = Emprego("Programador", "TI", 1000, 5)
+pessoa1 = Pessoa("Paulo", "11-99999999", "paulo@email.com", emprego)
 
-pessoa01.calcular_salario()
+dep1 = Pessoa("Maria", "", "", None)
+dep2 = Pessoa("Joao", "", "", None)
+
+pessoa1.dependentes.append(dep1)
+pessoa1.dependentes.append(dep2)
+
+print("Salario: ", pessoa1.calcular_salario())
